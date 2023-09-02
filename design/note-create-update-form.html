@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside>
+        <h1>NoteFlow.</h1>
+        <ul class="d-flex flex-col">
+          <li>
+            <a href="#"><img src="images/noteIcon.png" alt="" /> Notes</a>
+          </li>
+
+          <li>
+            <a href="#"><img src="images/setting.png" alt="" />Settings</a>
+          </li>
+          <li>
+            <button class="d-flex align-center">
+              <img src="images/logout.png" alt="" />Logout
+            </button>
+          </li>
+        </ul>
+      </aside>
+      <div class="dashboard-content">
+        <section class="note-form">
+          <h1>Create Note</h1>
+          <form class="note-user-form d-flex flex-col">
+            <label for="title" class="d-flex flex-col">
+              <p>Title:</p>
+              <input type="text" name="title" />
+              <span>Summarize Your Note in a Few Words.</span>
+            </label>
+            <label for="description" class="d-flex flex-col">
+              <p>Description:</p>
+              <textarea name="" id="" cols="30" rows="10"></textarea>
+              <span
+                >Describe the purpose or context of your note here. Feel free to
+                use line breaks or bullet points for better readability.</span
+              >
+            </label>
+
+            <input type="submit" value="Create" />
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -35,7 +35,6 @@ router.put("/update", auth, async (req, res) => {
 router.delete("/delete", auth, async (req, res) => {
   try {
     await Note.deleteMany({ userId: req.user.id });
-    await Todo.deleteMany({ userId: req.user.id });
     await User.findByIdAndDelete(req.user.id);
 
     return res.status(200).json({ msg: "User account deleted" });

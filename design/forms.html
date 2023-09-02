@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-register-form d-flex align-center justify-center">
+      <div class="form-container">
+        <h1>NoteFlow.</h1>
+        <div class="form-options">
+          <button class="active">Login</button>
+          <button>Register</button>
+        </div>
+        <form class="active login-form d-flex flex-col">
+          <label for="email" class="d-flex flex-col">
+            <span> Email :</span>
+            <input type="email" name="email" />
+          </label>
+          <label for="password" class="d-flex flex-col">
+            <span> Password :</span>
+            <input type="password" name="password" />
+          </label>
+          <input type="submit" value="Login" />
+        </form>
+        <form class="register-form d-flex flex-col">
+          <label for="username" class="d-flex flex-col">
+            <span> Username :</span>
+            <input type="text" name="username" />
+          </label>
+          <label for="email" class="d-flex flex-col">
+            <span>Email :</span>
+            <input type="email" name="email" />
+          </label>
+          <label for="password" class="d-flex flex-col">
+            <span>Password :</span>
+            <input type="password" name="password" />
+          </label>
+          <input type="submit" value="Register" />
+        </form>
+      </div>
+    </div>
+    <script>
+      let options = document.querySelectorAll(".form-options button");
+      options.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          if (e.target.innerText === "Login") {
+            options[0].classList.add("active");
+            options[1].classList.remove("active");
+            document.querySelector(".login-form").classList.add("active");
+            document.querySelector(".register-form").classList.remove("active");
+          } else {
+            options[0].classList.remove("active");
+            options[1].classList.add("active");
+            document.querySelector(".login-form").classList.remove("active");
+            document.querySelector(".register-form").classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notes</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside>
+        <h1>NoteFlow.</h1>
+        <ul class="d-flex flex-col">
+          <li>
+            <a href="#"><img src="images/noteIcon.png" alt="" /> Notes</a>
+          </li>
+
+          <li>
+            <a href="#"><img src="images/setting.png" alt="" />Settings</a>
+          </li>
+          <li>
+            <button class="d-flex align-center">
+              <img src="images/logout.png" alt="" />Logout
+            </button>
+          </li>
+        </ul>
+      </aside>
+      <div class="dashboard-content">
+        <section class="notes-section">
+          <h1>Pratham's Notes.</h1>
+          <div class="search-bar d-flex">
+            <input
+              type="search"
+              name="query"
+              placeholder="Search for notes.."
+            />
+            <a title="Create new note" href="#">+</a>
+          </div>
+          <div class="notes">
+            <div class="note d-flex">
+              <a href="note.html">
+                <div class="note-content">
+                  <h2 class="note-title">Lorem ipsum</h2>
+                  <p>
+                    dolor sit amet consectetur adipisicing elit. Eos quis
+                    dolores quas in dolorem quod ipsum, magni vel..
+                  </p>
+                </div>
+              </a>
+              <div class="note-icons d-flex flex-col">
+                <img src="images/pinIcon.png" alt="" />
+                <div class="note-menu">
+                  <img src="images/dots.png" alt="" />
+                  <ul class="note-menu-ul d-flex flex-col">
+                    <li><a href="#">Edit</a></li>
+                    <li><button>Pin</button></li>
+                    <li><button>Delete</button></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("click", (e) => {
+        if (e.target.localName === "img") {
+          if (e.target.nextElementSibling.classList.contains("note-menu-ul")) {
+            if (e.target.nextElementSibling.classList.contains("active")) {
+              e.target.nextElementSibling.classList.remove("active");
+            } else {
+              e.target.nextElementSibling.classList.add("active");
+            }
+          } else {
+            document.querySelectorAll(".note-menu img").forEach((img) => {
+              img.nextElementSibling.classList.remove("active");
+            });
+          }
+        } else {
+          document.querySelectorAll(".note-menu img").forEach((img) => {
+            img.nextElementSibling.classList.remove("active");
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

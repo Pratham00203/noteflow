@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <aside>
+        <h1>NoteFlow.</h1>
+        <ul class="d-flex flex-col">
+          <li>
+            <a href="#"><img src="images/noteIcon.png" alt="" /> Notes</a>
+          </li>
+
+          <li>
+            <a href="#"><img src="images/setting.png" alt="" />Settings</a>
+          </li>
+          <li>
+            <button class="d-flex align-center">
+              <img src="images/logout.png" alt="" />Logout
+            </button>
+          </li>
+        </ul>
+      </aside>
+      <div class="dashboard-content">
+        <section class="user-form">
+          <h1>Update user details</h1>
+          <form class="note-user-form d-flex flex-col">
+            <label for="username" class="d-flex flex-col">
+              <p>Username:</p>
+              <input type="text" name="username" />
+            </label>
+            <label for="email" class="d-flex flex-col">
+              <p>Email:</p>
+              <input type="email" name="email" />
+            </label>
+            <div class="d-flex" style="gap: 15px">
+              <input type="submit" value="Update" />
+              <button>Delete your account</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
