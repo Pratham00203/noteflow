@@ -1,0 +1,377 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;400&family=Playfair+Display:wght@700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utilities */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input[type="submit"] {
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+}
+
+.d-flex {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.align-center {
+  align-items: center;
+}
+
+/* Login/Register Page */
+
+.login-register-form {
+  background-color: #ffc017;
+  height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-container {
+  background-color: #ffff;
+  border-radius: 5px;
+  padding: 30px;
+  width: 400px;
+  border: 1px solid black;
+}
+
+.form-container h1 {
+  text-align: center;
+  font-family: "Roboto Mono";
+  margin-bottom: 30px;
+}
+
+.form-options {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 30px;
+  background-color: #f2f2f2;
+}
+
+.form-options button {
+  background-color: #f2f2f2;
+  color: #242424;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.form-options button.active {
+  background-color: #000;
+  color: #ffff;
+}
+
+.form-container form {
+  gap: 20px;
+  display: none;
+}
+
+.form-container form.active {
+  display: flex !important;
+}
+
+.form-container form label {
+  gap: 5px;
+}
+
+.form-container form input {
+  font-size: 16px;
+  padding: 5px;
+  border: 1px solid #8d8b8b;
+  border-radius: 3px;
+  background-color: #f2f2f2;
+}
+
+.form-container form input[type="submit"] {
+  margin-top: 25px;
+  background-color: #000;
+  color: #ffff;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Dashboard */
+.dashboard {
+  display: grid;
+  grid-template-columns: 0.8fr 5fr;
+}
+
+.dashboard aside {
+  background-color: #ffff;
+  border-right: 1px solid black;
+  height: 100vh;
+  padding: 30px 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.dashboard aside h1 {
+  font-size: 25px;
+  font-family: "Roboto Mono";
+  margin-bottom: 30px;
+}
+
+.dashboard aside ul {
+  list-style: none;
+  margin-top: 50px;
+  gap: 12px;
+  width: 100%;
+  font-size: 17px;
+}
+
+.dashboard aside ul li {
+  width: 100%;
+}
+
+.dashboard aside ul li a {
+  padding: 8px 12px;
+  display: block;
+  width: 100%;
+  border-radius: 3px;
+  color: #8d8b8b;
+}
+
+.dashboard aside ul li a img,
+.dashboard aside ul li button img {
+  width: 14px;
+  margin-right: 6px;
+}
+
+.dashboard aside ul li a:hover {
+  background-color: #f2f2f2;
+  color: green;
+}
+
+.dashboard aside ul li button {
+  padding: 8px 12px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: transparent;
+  font-size: 17px;
+  border: none;
+  color: red;
+  text-align: start;
+  cursor: pointer;
+  gap: 2px;
+}
+
+.dashboard aside ul li button:hover {
+  background-color: rgb(255, 0, 0, 0.3);
+}
+
+.dashboard-content {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100%;
+}
+
+.notes-section,
+.user-form {
+  padding: 30px;
+  background-color: #ffc017;
+  height: 100%;
+}
+
+.notes-section > h1,
+.note-section > h1,
+.note-form > h1,
+.user-form > h1 {
+  font-size: 35px;
+  font-family: "Playfair Display";
+}
+
+.notes-section .search-bar {
+  width: 100%;
+  margin: 30px 0;
+  gap: 15px;
+}
+
+.notes-section .search-bar input::placeholder {
+  color: #b7b7b7;
+}
+
+.notes-section .search-bar input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 18px;
+  padding: 8px 15px;
+  color: #242424;
+  background-color: #ffff;
+}
+
+.notes-section .search-bar > a {
+  background-color: #000;
+  color: #fff;
+  padding: 6px 15px;
+  font-size: 30px;
+  line-break: normal;
+  width: fit-content;
+  border-radius: 50%;
+}
+
+.notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.notes .note {
+  background-color: #bcdfff;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 14px;
+  color: black;
+  font-size: 16.74px;
+  gap: 5px;
+  justify-content: space-between;
+  height: 150px;
+}
+
+.note-content {
+  width: 50%;
+}
+
+.note-content h2 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.note .note-icons {
+  justify-content: space-between;
+  position: relative;
+  z-index: 99;
+}
+
+.note .note-icons img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.note .note-menu ul {
+  background-color: #fff;
+  padding: 10px 15px;
+  position: absolute;
+  bottom: -64px;
+  right: 25px;
+  list-style: none;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  gap: 7px;
+  padding-right: 25px;
+  transform: scale(0);
+  transform-origin: top right;
+  transition: transform 0.1s linear;
+}
+
+.note .note-menu ul.active {
+  transform: scale(1);
+}
+
+.note .note-menu ul li button {
+  font-size: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.note .note-menu ul li:last-child button {
+  color: red;
+}
+
+/* Note Page */
+.note-section,
+.note-form {
+  padding: 30px;
+  background-color: #bcdfff;
+  height: 100%;
+}
+
+.note-section .note-info h1 {
+  margin: 30px 0 5px 0;
+}
+
+.note-section .note-time-info {
+  margin-bottom: 20px;
+  color: #8d8b8b;
+}
+
+.note-section .note-info-content {
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.note-section .note-info-cta a,
+.note-section .note-info-cta button,
+.note-user-form input[type="submit"] {
+  background-color: rgb(26, 137, 23);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.note-section .note-info-cta button {
+  background-color: rgb(200, 3, 3);
+}
+
+/* Create/Update Note Page */
+
+.note-user-form {
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.note-user-form label {
+  gap: 10px;
+}
+
+.note-user-form label {
+  font-size: 18px;
+}
+
+.note-user-form label input {
+  font-size: 18px;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.note-user-form label span {
+  font-size: 15px;
+  color: #8d8b8b;
+}
+
+.note-user-form input[type="submit"] {
+  width: fit-content;
+}
+
+.note-user-form button {
+  background-color: transparent;
+  font-size: 16px;
+  color: rgb(188, 3, 3);
+  border: none;
+  cursor: pointer;
+}

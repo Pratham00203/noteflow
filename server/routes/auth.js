@@ -46,10 +46,10 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// @route    GET api/auth/login
+// @route    POST api/auth/login
 // @desc     Login a user
 // @access   Public
-router.get("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 

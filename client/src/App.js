@@ -1,24 +1,111 @@
-import logo from './logo.svg';
-import './App.css';
+import { Toaster } from "react-hot-toast";
+import "./style.css";
+import LoginRegister from "./components/LoginRegister";
+import Dashboard from "./components/Dashboard";
+import { useState, useEffect } from "react";
+import checkAuth from "./helpers/auth";
+import { Routes, Route } from "react-router-dom";
+import { PublicRoute } from "./components/PublicRoute";
+import { PrivateRoute } from "./components/PrivateRoute";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
+  useEffect(() => {
+    if (checkAuth()) {
+      setIsAuthenticated(true);
+    }
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route
+          exact
+          path='/'
+          element={
+            isAuthenticated ? (
+              <Dashboard defaultOption='Notes' />
+            ) : (
+              <LoginRegister />
+            )
+          }
+        />
+        <Route
+          exact
+          path='/login'
+          element={
+            <PublicRoute>
+              <LoginRegister defaultOption='Login' />
+            </PublicRoute>
+          }
+        />
+        <Route
+          exact
+          path='/register'
+          element={
+            <PublicRoute>
+              <LoginRegister defaultOption='Register' />
+            </PublicRoute>
+          }
+        />
+        <Route
+          exact
+          path='/dashboard/notes'
+          element={
+            <PrivateRoute>
+              <Dashboard defaultOption='Notes' />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          exact
+          path='/dashboard/settings'
+          element={
+            <PrivateRoute>
+              <Dashboard defaultOption='Settings' />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          exact
+          path='/dashboard/create/note'
+          element={
+            <PrivateRoute>
+              <Dashboard defaultOption='Create Note' />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          exact
+          path='/dashboard/update/note/:noteid'
+          element={
+            <PrivateRoute>
+              <Dashboard defaultOption='Update Note' />
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          exact
+          path='/dashboard/note/:noteid'
+          element={
+            <PrivateRoute>
+              <Dashboard defaultOption='Note' />
+            </PrivateRoute>
+          }
+        />
+        <Route exact path='*' element={<h1>Not Found</h1>} />
+      </Routes>
+      <Toaster
+        position='top-right'
+        toastOptions={{
+          duration: 2000,
+          style: {
+            fontFamily: "Arial",
+            fontSize: "18px",
+          },
+        }}
+      />
+    </>
   );
 }
 

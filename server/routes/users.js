@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const User = require("../models/User");
 const Note = require("../models/Note");
-const Todo = require("../models/Todo");
 const auth = require("../middleware/auth");
 
 // @route    PUT api/user/update
