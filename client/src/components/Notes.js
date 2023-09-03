@@ -41,7 +41,7 @@ export default function Notes() {
     try {
       let res = await axios({
         method: "get",
-        url: "http://localhost:5000/api/note/get/notes/all",
+        url: "https://noteflow-backend.onrender.com/api/note/get/notes/all",
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -57,7 +57,7 @@ export default function Notes() {
       if (window.confirm("Are you sure you want to delete this note?")) {
         let res = await axios({
           method: "delete",
-          url: `http://localhost:5000/api/note/delete/${noteid}`,
+          url: `https://noteflow-backend.onrender.com/api/note/delete/${noteid}`,
           headers: {
             "x-auth-token": localStorage.getItem("token"),
           },
@@ -78,7 +78,7 @@ export default function Notes() {
     try {
       let res = await axios({
         method: "put",
-        url: `http://localhost:5000/api/note/pin/${noteid}`,
+        url: `https://noteflow-backend.onrender.com/api/note/pin/${noteid}`,
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -105,7 +105,7 @@ export default function Notes() {
     try {
       let res = await axios({
         method: "put",
-        url: `http://localhost:5000/api/note/unpin/${noteid}`,
+        url: `https://noteflow-backend.onrender.com/api/note/unpin/${noteid}`,
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },

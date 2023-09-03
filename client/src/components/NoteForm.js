@@ -18,7 +18,7 @@ export default function NoteForm({ option, noteid }) {
     try {
       let res = await axios({
         method: "get",
-        url: `http://localhost:5000/api/note/get/note/${noteid}`,
+        url: `https://noteflow-backend.onrender.com/api/note/get/note/${noteid}`,
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -36,7 +36,7 @@ export default function NoteForm({ option, noteid }) {
       if (title.trim() !== "" && description.trim() !== "") {
         let res = await axios({
           method: "post",
-          url: `http://localhost:5000/api/note/create`,
+          url: `https://noteflow-backend.onrender.com/api/note/create`,
           headers: {
             "x-auth-token": localStorage.getItem("token"),
           },
@@ -61,7 +61,7 @@ export default function NoteForm({ option, noteid }) {
       if (title.trim() !== "" && description.trim() !== "") {
         let res = await axios({
           method: "put",
-          url: `http://localhost:5000/api/note/update/${noteid}`,
+          url: `https://noteflow-backend.onrender.com/api/note/update/${noteid}`,
           headers: {
             "x-auth-token": localStorage.getItem("token"),
           },

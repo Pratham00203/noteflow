@@ -17,7 +17,7 @@ export default function Settings() {
     try {
       let res = await axios({
         method: "get",
-        url: "http://localhost:5000/api/auth",
+        url: "https://noteflow-backend.onrender.com/api/auth",
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -34,7 +34,7 @@ export default function Settings() {
       e.preventDefault();
       let res = await axios({
         method: "put",
-        url: "http://localhost:5000/api/user/update",
+        url: "https://noteflow-backend.onrender.com/api/user/update",
         headers: {
           "x-auth-token": localStorage.getItem("token"),
         },
@@ -56,7 +56,7 @@ export default function Settings() {
       if (window.confirm("Are you sure you want to delete this account?")) {
         let res = await axios({
           method: "delete",
-          url: "http://localhost:5000/api/user/delete",
+          url: "https://noteflow-backend.onrender.com/api/user/delete",
           headers: {
             "x-auth-token": localStorage.getItem("token"),
           },

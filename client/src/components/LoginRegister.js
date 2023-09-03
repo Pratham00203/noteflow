@@ -35,7 +35,7 @@ export default function LoginRegister({ defaultOption }) {
       ) {
         let res = await axios({
           method: "post",
-          url: "http://localhost:5000/api/auth/login",
+          url: "https://noteflow-backend.onrender.com/api/auth/login",
           data: {
             email: loginEmail.current.value,
             password: loginPassword.current.value,
@@ -62,7 +62,7 @@ export default function LoginRegister({ defaultOption }) {
       ) {
         let res = await axios({
           method: "post",
-          url: "http://localhost:5000/api/auth/register",
+          url: "https://noteflow-backend.onrender.com/api/auth/register",
           data: {
             username: registerUsername.current.value,
             email: registerEmail.current.value,
